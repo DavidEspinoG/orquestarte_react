@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Montserrat:wght@400;500;600;700&display=swap');
+
 :root {
   --fuenteOrquestarte:'Montserrat', sans-serif;
   --fuenteCitas: 'Amatic SC', cursive;
@@ -10,6 +12,12 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+  padding: 0;
+  margin: 0;
+}
+body {
+  padding: 0;
+  margin: 0;
 }
 *,*:before, *:after {
   box-sizing: inherit;
@@ -69,7 +77,7 @@ img {
 .navegacion__enlaces {
   color: var(--naranja);
   text-transform: uppercase;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   font-weight: 500;
   display: block;
   margin-bottom: 2rem;    
@@ -77,15 +85,16 @@ img {
 @media (min-width: 1110px) {
  .barra {
      display: grid;
-     grid-template-columns: 1fr 2fr;
+     grid-template-columns: 1fr 3fr;
  }
  .navegacion{
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-around;
       align-items: center;
  }  
  .navegacion__enlaces {
      margin-top: 1.5rem;
+     max-width: 250px;
  }
  .navegacion__enlaces__unalinea {
   margin-top: 2.5rem;
@@ -122,6 +131,11 @@ img {
   margin-top: 1.5rem;
   font-size: 1.9rem;
 }
+blockquote {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
 .derechos {
   font-family: var(--fuenteOrquestarte);
   color: var(--blanco);
@@ -137,6 +151,7 @@ img {
   max-width: 90%;
   margin: auto;
 }
+
 .cuadro-testimonial {
   background-color: var(--amarillo);
   padding: 2rem;
@@ -146,7 +161,7 @@ img {
 @media (min-width: 1110px) {
    .cuadro-testimonial {
        display: grid;
-       grid-template-columns: 1fr 1fr;
+       grid-template-columns: repeat(2, 1fr);
    }
    .contenedor-testimonial {
        max-width: 80%;
@@ -160,18 +175,16 @@ img {
         padding-bottom:3rem;
     }
 }
-.imagen-testimonial {
-  width: 93%;
-  display: block;
-  margin: auto;
-  border-radius: 10px;
-}
+
 @media (min-width: 1200px) {
    .imagen-testimonial {
        width: 90;
    }
 }
 .cita {
+  display: flex;
+  justify-items: center;
+  align-items: center;
   text-align: center;
 }
 .texto-testimonial {
@@ -179,47 +192,40 @@ img {
   font-family: var(--fuenteCitas);
   font-size: 4rem;
   text-align: center;
-  margin-top: 1.5rem;
+  margin-top: 0;
   margin-bottom: 1.5rem;
 }
-.texto-testimonial2 {
-  color: var(--gris);
-  font-family: var(--fuenteCitas);
-  font-size: 4rem;
-  text-align: center;
-  margin-top: .5rem;
-  margin-bottom: 1.5rem;
+.img-testimonial {
+  display: flex;
+  align-items: center;
+}
+.img-testimonial img {
+  border-radius: 10px;
+  width: 500px;
+  height: 400px;
 }
 @media (min-width: 1110px) {
    .texto-testimonial {
-       font-size: 5rem;
-       margin-top: 4rem;
+       font-size: 4.5rem;
    }
-   .texto-testimonial2 {
-      font-size: 5rem;
-      margin-top: 1.5rem;
-  }
+   
 }
 @media (min-width: 1200px) {
     .texto-testimonial {
         font-size: 6rem;
         margin-top: 8rem;
     }
-    .texto-testimonial2 {
-      font-size: 6rem;
-      margin-top: 3rem;
-  }
 }
 .autor-testimonial {
   font-family: var(--fuenteOrquestarte);
   color: var(--gris);
-  font-size: 2rem;
+  font-size: 3rem;
 }
-@media (min-width: 1110px) {
+/* @media (min-width: 1110px) {
   .autor-testimonial {
       font-size: 3rem;
   }
-}
+} */
 
 /* Virtuales */
 
