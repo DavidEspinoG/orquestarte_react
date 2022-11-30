@@ -1,13 +1,545 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --fuenteOrquestarte:'Montserrat', sans-serif;
+  --fuenteCitas: 'Amatic SC', cursive;
+  --naranja: #F7882F;
+  --gris: #6b7a8f;
+  --amarillo: #f7c331;
+  --cafe: #dcc7aa;
+  --blanco:#ffffff;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*,*:before, *:after {
+  box-sizing: inherit;
+}
+.contenedor {
+  max-width: 90%;
+  width: 90;
+  margin: 0 auto;
+}
+a {
+  text-decoration: none;
+  font-family: var(--fuenteOrquestarte)
+}
+h1, h2, h3, h4 {
+  font-family: var(--fuenteOrquestarte);
+  color: var(--naranja);
+}
+h1 {
+  font-size: 3.5rem;
+}
+h2 {
+  font-weight: 600;
+  font-size: 2.3rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+img {
+  max-width: 100%;
+}
+
+.no-margin {
+  margin: 0;
+}
+.no-padding {
+  padding: 0;
+}
+.centrar-texto {
+  text-align: center;
+}
+
+.barra {
+  text-align: center;
+}
+.logo a {
+  color: black;
+}
+
+.logo__linea1 {
+  margin-left: 1rem;
+  margin-bottom: 0;
+}
+.logo__linea2 {
+  margin-left: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+
+.navegacion__enlaces {
+  color: var(--naranja);
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 2rem;    
+}
+@media (min-width: 1110px) {
+ .barra {
+     display: grid;
+     grid-template-columns: 1fr 2fr;
+ }
+ .navegacion{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+ }  
+ .navegacion__enlaces {
+     margin-top: 1.5rem;
+ }
+ .navegacion__enlaces__unalinea {
+  margin-top: 2.5rem;
+ }
+}
+
+.navegacion__enlaces:hover {
+  color: var(--amarillo);
+}
+.titulo {
+  text-align: center;
+}
+.footer {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  background-color: var(--gris);   
+  /* position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%; */
+}
+.footer-presenciales {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  background-color: var(--gris);   
+  /* position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%; */
+}
+.mailto {
+  color:#fff;
+  display: block;
+  margin-top: 1.5rem;
+  font-size: 1.9rem;
+}
+.derechos {
+  font-family: var(--fuenteOrquestarte);
+  color: var(--blanco);
+  font-size: 1.7rem;
+  margin-bottom: 0;
+  text-align: center;
+}
+.texto-derechos{
+  margin-bottom: 0;
+}
+
+.contenedor-testimonial{
+  max-width: 90%;
+  margin: auto;
+}
+.cuadro-testimonial {
+  background-color: var(--amarillo);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 5rem;
+}
+@media (min-width: 1110px) {
+   .cuadro-testimonial {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+   }
+   .contenedor-testimonial {
+       max-width: 80%;
+       margin: auto;
+   }
+  
+}
+@media (min-width: 1200px) {
+    .cuadro-testimonial {
+        padding-top:3rem;
+        padding-bottom:3rem;
+    }
+}
+.imagen-testimonial {
+  width: 93%;
+  display: block;
+  margin: auto;
+  border-radius: 10px;
+}
+@media (min-width: 1200px) {
+   .imagen-testimonial {
+       width: 90;
+   }
+}
+.cita {
+  text-align: center;
+}
+.texto-testimonial {
+  color: var(--gris);
+  font-family: var(--fuenteCitas);
+  font-size: 4rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.texto-testimonial2 {
+  color: var(--gris);
+  font-family: var(--fuenteCitas);
+  font-size: 4rem;
+  text-align: center;
+  margin-top: .5rem;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 1110px) {
+   .texto-testimonial {
+       font-size: 5rem;
+       margin-top: 4rem;
+   }
+   .texto-testimonial2 {
+      font-size: 5rem;
+      margin-top: 1.5rem;
+  }
+}
+@media (min-width: 1200px) {
+    .texto-testimonial {
+        font-size: 6rem;
+        margin-top: 8rem;
+    }
+    .texto-testimonial2 {
+      font-size: 6rem;
+      margin-top: 3rem;
+  }
+}
+.autor-testimonial {
+  font-family: var(--fuenteOrquestarte);
+  color: var(--gris);
+  font-size: 2rem;
+}
+@media (min-width: 1110px) {
+  .autor-testimonial {
+      font-size: 3rem;
+  }
+}
+
+/* Virtuales */
+
+.grid-instrumentos {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-rows: 1fr 1fr;
+   grid-column-gap: 2rem;
+   grid-row-gap: 2rem;
+  margin-bottom: 2rem;
+  padding: 3rem;
+}
+
+@media (max-width: 972px) {
+  .grid-instrumentos {
+      display: block;
+  }
+}
+.cuadro-instrumento {
+  background-color: var(--amarillo);
+  padding: 1.5rem;
+  border-radius: 5px;
+  text-align: center;
+}
+@media (max-width: 972px) {
+  .cuadro-instrumento {
+      margin-bottom: 1rem;
+  }
+}
+.cuadro-instrumento img {
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+.cuadro-instrumento a {
+  font-family: var(--fuenteCitas);
+  color: var(--gris);
+  font-size: 4rem;
+}
+.cuadro-instrumento a:hover {
+  color: var(--naranja);
+}
+.flex-agenda {
+ display: grid;
+ grid-template-columns: 2fr 1fr;
+ margin-top: 3rem;
+ margin-bottom: 4rem;
+}
+@media (max-width: 972px) {
+ .flex-agenda {
+     display: block;
+  }
+  .flex-agenda img {
+      display: none;
+  }
+}
+
+.agenda {
+  background-color: var(--amarillo);
+  text-transform: uppercase;
+
+  border-radius: 50%;
+  padding: 2rem;
+  text-align: center;
+  margin: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 370px) {
+  .agenda {
+      border-radius: 0%;
+  }
+}
+
+@media (min-width: 973px) {
+  .agenda {
+      border-radius: 50%;
+  }
+}
+
+.agenda a {
+  font-size: 5rem;
+  font-family: var(--fuenteCitas);
+  color: var(--gris);
+}
+.agenda a:hover {
+  color: var(--naranja);
+}
+
+/* presenciales */
+
+.estados {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+@media (max-width: 725px) {
+   .estados {
+       display: block;
+   }
+}
+.caja {
+  background-color: var(--amarillo);
+  color: var(--gris);
+  font-family: var(--fuenteCitas);
+  font-size: 6rem;
+  padding: 2rem;
+  margin: 11rem 0;
+}
+@media (max-width: 738px) {
+  .caja {
+      text-align: center;
+  }
+}
+/* mexico presenciales */
+
+.instrumentos-presenciales-uno {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+ /* margin-bottom: 2rem; */
+ padding: 3rem;
+}
+.instrumentos-presenciales-dos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1rem;
+  padding: 0 19rem;
+}
+@media (max-width: 972px)  {
+  .instrumentos-presenciales-uno {
+      display: block;
+      padding: unset;
+  }
+  .instrumentos-presenciales-dos {
+      display: block;
+      padding: unset;
+      /* margin: 0 auto;
+      max-width: 82%; */
+  }
+}
+.flex-agenda-presenciales {
+ margin: 0 auto;
+}
+/* Yucatán */
+.imagen-yucatan {
+  margin-top: 1rem;
+  border-radius: 1rem;
+}
+.unam {
+  padding-top:1rem;
+}
+.caja-yucatan {
+   display:grid;
+   grid-template-columns: 1fr 1fr;
+   background-color: var(--amarillo);
+   padding: 2rem;
+   margin-bottom: 1rem;
+   border-radius: 1rem;
+}
+.texto-yucatan {
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  color: var(--gris);
+  font-family: var(--fuenteCitas);
+  text-align: center;
+  font-size: 2.5rem;
+}
+@media (min-width: 400px) {
+  .texto-yucatan {
+      font-size:3rem;
+  }
+}
+@media (min-width: 480px) {
+  .texto-yucatan {
+      font-size:3.5rem;
+  }
+}
+@media (min-width: 550px) {
+  .texto-yucatan {
+      font-size:4rem;
+  }
+}
+@media (min-width: 640px) {
+  .texto-yucatan {
+      font-size:5rem;
+  }
+}
+@media (min-width: 700px) {
+  .texto-yucatan {
+      font-size:6rem;
+  }
+}
+@media (min-width: 840px) {
+  .texto-yucatan {
+      font-size:6.5rem;
+  }
+}
+@media (min-width: 1000px) {
+  .texto-yucatan {
+      font-size: 7.1rem;
+  }
+}
+@media (min-width: 1100px) {
+  .texto-yucatan {
+      font-size: 4rem;
+  }
+}
+@media (min-width: 1100px) {
+  .grid-yucatan {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+  }
+}
+.direccion{
+   margin-top: 3rem;
+   margin-bottom: 3rem;
+}
+ /* @media (min-width: 1100px) {
+     .imagen-yucatan {
+         margin-top: 6rem;
+     }
+ } */
+.clase-prueba {
+  width: 30rem;
+height: 30rem;
+border-radius: 50%;
+background: var(--amarillo);
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+  margin:1rem auto;
+  padding:1rem;
+}
+.clase-prueba a {
+  color: var(--gris);
+  font-family: var(--fuenteCitas);
+  font-size: 5rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.clase-prueba a:hover {
+  color: var(--naranja);
+}
+/* Recitales */
+
+.contenedor-recitales {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+.cuadro-recital{
+  background-color: var(--amarillo);
+  text-align: center;
+  width: 30rem;
+}
+.cuadro-recital:last-child{
+  margin-bottom: 3rem;
+}
+
+.cuadro-recital h1 {
+  font-family: var(--fuenteCitas);
+  color: var(--gris);
+  font-weight: 300;
+}
+.titulo-recital {
+  font-family: var(--fuenteOrquestarte);
+  text-transform: uppercase;
+  color: var(--gris);
+  font-weight: 300;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.hora-recital {
+  font-family: var(--fuenteOrquestarte);
+  text-transform: uppercase;
+  color: var(--naranja);
+  font-weight: 300;
+  font-size: 2.5rem;
+  margin-top: 1rem;
+}
+.programa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.repertorio{
+  width: 45rem;
+  display:flex;
+  justify-content: space-around;
+}
+@media (max-width: 400px) {
+  .repertorio {
+      width: 35rem;
+  }
+}
+.alumno, .pieza, .compositor, .maestro {
+  font-family: var(--fuenteOrquestarte);
+}
+.alumno {
+  font-size: 1.8rem;
+  text-decoration: underline;
+}
+.pieza, .compositor {
+  font-size: 1.5rem;
+}
+.maestro {
+  font-size: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+.repertorio {
+  white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -o-pre-wrap;
 }
