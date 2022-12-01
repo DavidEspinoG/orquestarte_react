@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Montserrat:wght@400;500;600;700&display=swap');
-
 :root {
   --fuenteOrquestarte:'Montserrat', sans-serif;
   --fuenteCitas: 'Amatic SC', cursive;
@@ -31,16 +30,17 @@ a {
   text-decoration: none;
   font-family: var(--fuenteOrquestarte)
 }
-h1, h2, h3, h4 {
+h1, h2, h3, h4, p {
   font-family: var(--fuenteOrquestarte);
-  color: var(--naranja);
 }
 h1 {
   font-size: 3.5rem;
+  color: var(--naranja);
 }
-h2 {
-  font-weight: 600;
+h3 {
+  font-weight: 400;
   font-size: 2.3rem;
+  color: var(--gris);
 }
 
 img {
@@ -62,6 +62,9 @@ img {
 }
 .logo a {
   color: black;
+}
+.logo h2 {
+  color: var(--naranja);
 }
 
 .logo__linea1 {
@@ -143,12 +146,16 @@ blockquote {
   margin-bottom: 0;
   text-align: center;
 }
+.derechos p {
+  font-size: 1.5rem;
+}
 .texto-derechos{
   margin-bottom: 0;
 }
 
 .contenedor-testimonial{
-  max-width: 90%;
+  width: 90%;
+  max-width: 1100px;
   margin: auto;
 }
 
@@ -158,16 +165,12 @@ blockquote {
   border-radius: 10px;
   margin-bottom: 5rem;
 }
-@media (min-width: 1110px) {
+
+@media (min-width: 920px) {
    .cuadro-testimonial {
        display: grid;
        grid-template-columns: repeat(2, 1fr);
    }
-   .contenedor-testimonial {
-       max-width: 80%;
-       margin: auto;
-   }
-  
 }
 @media (min-width: 1200px) {
     .cuadro-testimonial {
@@ -198,10 +201,12 @@ blockquote {
 .img-testimonial {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .img-testimonial img {
   border-radius: 10px;
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   height: 400px;
 }
 @media (min-width: 1110px) {
@@ -213,7 +218,6 @@ blockquote {
 @media (min-width: 1200px) {
     .texto-testimonial {
         font-size: 6rem;
-        margin-top: 8rem;
     }
 }
 .autor-testimonial {
@@ -227,256 +231,7 @@ blockquote {
   }
 } */
 
-/* Virtuales */
 
-.grid-instrumentos {
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr;
-   grid-template-rows: 1fr 1fr;
-   grid-column-gap: 2rem;
-   grid-row-gap: 2rem;
-  margin-bottom: 2rem;
-  padding: 3rem;
-}
-
-@media (max-width: 972px) {
-  .grid-instrumentos {
-      display: block;
-  }
-}
-.cuadro-instrumento {
-  background-color: var(--amarillo);
-  padding: 1.5rem;
-  border-radius: 5px;
-  text-align: center;
-}
-@media (max-width: 972px) {
-  .cuadro-instrumento {
-      margin-bottom: 1rem;
-  }
-}
-.cuadro-instrumento img {
-  border-radius: 5px;
-  margin-bottom: 1rem;
-}
-.cuadro-instrumento a {
-  font-family: var(--fuenteCitas);
-  color: var(--gris);
-  font-size: 4rem;
-}
-.cuadro-instrumento a:hover {
-  color: var(--naranja);
-}
-.flex-agenda {
- display: grid;
- grid-template-columns: 2fr 1fr;
- margin-top: 3rem;
- margin-bottom: 4rem;
-}
-@media (max-width: 972px) {
- .flex-agenda {
-     display: block;
-  }
-  .flex-agenda img {
-      display: none;
-  }
-}
-
-.agenda {
-  background-color: var(--amarillo);
-  text-transform: uppercase;
-
-  border-radius: 50%;
-  padding: 2rem;
-  text-align: center;
-  margin: 4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@media (min-width: 370px) {
-  .agenda {
-      border-radius: 0%;
-  }
-}
-
-@media (min-width: 973px) {
-  .agenda {
-      border-radius: 50%;
-  }
-}
-
-.agenda a {
-  font-size: 5rem;
-  font-family: var(--fuenteCitas);
-  color: var(--gris);
-}
-.agenda a:hover {
-  color: var(--naranja);
-}
-
-/* presenciales */
-
-.estados {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-@media (max-width: 725px) {
-   .estados {
-       display: block;
-   }
-}
-.caja {
-  background-color: var(--amarillo);
-  color: var(--gris);
-  font-family: var(--fuenteCitas);
-  font-size: 6rem;
-  padding: 2rem;
-  margin: 11rem 0;
-}
-@media (max-width: 738px) {
-  .caja {
-      text-align: center;
-  }
-}
-/* mexico presenciales */
-
-.instrumentos-presenciales-uno {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-column-gap: 2rem;
-  grid-row-gap: 2rem;
- /* margin-bottom: 2rem; */
- padding: 3rem;
-}
-.instrumentos-presenciales-dos {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 1rem;
-  padding: 0 19rem;
-}
-@media (max-width: 972px)  {
-  .instrumentos-presenciales-uno {
-      display: block;
-      padding: unset;
-  }
-  .instrumentos-presenciales-dos {
-      display: block;
-      padding: unset;
-      /* margin: 0 auto;
-      max-width: 82%; */
-  }
-}
-.flex-agenda-presenciales {
- margin: 0 auto;
-}
-/* Yucatán */
-.imagen-yucatan {
-  margin-top: 1rem;
-  border-radius: 1rem;
-}
-.unam {
-  padding-top:1rem;
-}
-.caja-yucatan {
-   display:grid;
-   grid-template-columns: 1fr 1fr;
-   background-color: var(--amarillo);
-   padding: 2rem;
-   margin-bottom: 1rem;
-   border-radius: 1rem;
-}
-.texto-yucatan {
-  display: grid;
-  place-items: center;
-  padding: 1rem;
-  color: var(--gris);
-  font-family: var(--fuenteCitas);
-  text-align: center;
-  font-size: 2.5rem;
-}
-@media (min-width: 400px) {
-  .texto-yucatan {
-      font-size:3rem;
-  }
-}
-@media (min-width: 480px) {
-  .texto-yucatan {
-      font-size:3.5rem;
-  }
-}
-@media (min-width: 550px) {
-  .texto-yucatan {
-      font-size:4rem;
-  }
-}
-@media (min-width: 640px) {
-  .texto-yucatan {
-      font-size:5rem;
-  }
-}
-@media (min-width: 700px) {
-  .texto-yucatan {
-      font-size:6rem;
-  }
-}
-@media (min-width: 840px) {
-  .texto-yucatan {
-      font-size:6.5rem;
-  }
-}
-@media (min-width: 1000px) {
-  .texto-yucatan {
-      font-size: 7.1rem;
-  }
-}
-@media (min-width: 1100px) {
-  .texto-yucatan {
-      font-size: 4rem;
-  }
-}
-@media (min-width: 1100px) {
-  .grid-yucatan {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-  }
-}
-.direccion{
-   margin-top: 3rem;
-   margin-bottom: 3rem;
-}
- /* @media (min-width: 1100px) {
-     .imagen-yucatan {
-         margin-top: 6rem;
-     }
- } */
-.clase-prueba {
-  width: 30rem;
-height: 30rem;
-border-radius: 50%;
-background: var(--amarillo);
-display: flex;
-justify-content: center;
-align-items: center;
-text-align: center;
-  margin:1rem auto;
-  padding:1rem;
-}
-.clase-prueba a {
-  color: var(--gris);
-  font-family: var(--fuenteCitas);
-  font-size: 5rem;
-  text-align: center;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-.clase-prueba a:hover {
-  color: var(--naranja);
-}
 /* Recitales */
 
 .contenedor-recitales {
@@ -548,4 +303,29 @@ text-align: center;
   white-space: pre-wrap;
       white-space: -moz-pre-wrap;
       white-space: -o-pre-wrap;
+}
+/* About us */
+
+.about-us {
+ display: flex;
+ justify-content: space-between;
+ gap: 20px;
+ padding: 0 10px;
+ margin-top: 20px;
+ margin-bottom: 30px;
+}
+.about-us-text {
+  display: flex;
+  align-items: center;
+  font-size: 2.7rem;
+}
+.about-us-text h3 {
+  margin: 0;
+}
+.about-us-text p {
+  margin-top: 5px;
+}
+.about-us-img {
+  flex-basis:220px;
+  flex-shrink: 0;
 }

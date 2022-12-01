@@ -1,7 +1,36 @@
 import React from "react";
+import { Title } from "./Title";
 import testimonial1 from "../assets/img/testimonial1.jpeg";
 import testimonial2 from "../assets/img/testimonial2.jpeg";
 import testimonial3 from "../assets/img/testimonial3.jpeg";
+
+
+function Testimonial(){
+    return (
+        <>
+            <Title>TESTIMONIOS</Title>
+            <div className="contenedor-testimonial">
+                {testimonials.map((element) => {
+                    if(element.version === 1){
+                       return <TestimonialV1
+                            key={element.text}
+                            text={element.text}
+                            src={element.imgSrc}
+                            author={element.author}
+                        />
+                    } else {
+                        return <TestimonialV2
+                            key={element.text}
+                            text={element.text}
+                            src={element.imgSrc}
+                            author={element.author}
+                        />
+                    }
+                })}
+            </div>                    
+        </>
+    )
+}
 
 const testimonials = [
     {
@@ -56,34 +85,4 @@ function TestimonialV2(props){
         </div>
     )
 }
-
-function Testimonial(){
-    return (
-        <>
-            <div className="contenedor titulo">
-                <h1>TESTIMONIOS</h1>
-            </div>
-            <div className="contenedor-testimonial">
-                {testimonials.map((element) => {
-                    if(element.version === 1){
-                       return <TestimonialV1
-                            key={element.text}
-                            text={element.text}
-                            src={element.imgSrc}
-                            author={element.author}
-                        />
-                    } else {
-                        return <TestimonialV2
-                            key={element.text}
-                            text={element.text}
-                            src={element.imgSrc}
-                            author={element.author}
-                        />
-                    }
-                })}
-            </div>                    
-        </>
-    )
-}
-
 export { Testimonial }
