@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Montserrat:wght@400;500;600;700&display=swap');
+/* # CSS */
+@import "~react-image-gallery/styles/css/image-gallery.css";
 :root {
   --fuenteOrquestarte:'Montserrat', sans-serif;
   --fuenteCitas: 'Amatic SC', cursive;
@@ -324,6 +326,7 @@ blockquote {
 }
 .about-us-text p {
   margin-top: 5px;
+  text-align: justify;
 }
 .about-us-img {
   flex-basis:220px;
@@ -342,6 +345,6 @@ blockquote {
     order: 2;
   }
   .about-us-img img {
-    width: 170px;
+    width: 150px;
   }
 }
