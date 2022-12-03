@@ -26,13 +26,11 @@ function AboutUs(){
                         image={img3}
                         title="¿Cómo se paga por nuestros servicios?"
                         content="Ofrecemos dos modalidades de pago: el colegio puede contratar
-                        nuestros servicios por una cantidad mensual fija u orquestarte puede trabajar sin costo para el colegio cobrando directamente a los alumnos. En la segunda modalidad, orquestarte le paga a tu colegio una mensualidad fija."
-                        
+                        nuestros servicios por una cantidad mensual fija u orquestarte puede trabajar sin
+                        costo para el colegio cobrando directamente a los alumnos. En la segunda modalidad, 
+                        orquestarte le paga a tu colegio una mensualidad fija."
                     />
-                   
-                
                 </div>
-                
             </Template>
         </>
     )

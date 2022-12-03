@@ -329,3 +329,19 @@ blockquote {
   flex-basis:220px;
   flex-shrink: 0;
 }
+@media (max-width: 620px) {
+  .about-us {
+    flex-direction: column;
+  }
+  .about-us-text{ 
+    order: 1;
+  }
+  .about-us-img {
+    display: flex;
+    justify-content: center;
+    order: 2;
+  }
+  .about-us-img img {
+    width: 170px;
+  }
+}
