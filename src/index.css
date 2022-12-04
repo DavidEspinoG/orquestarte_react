@@ -366,9 +366,6 @@ blockquote {
   resize: none;
   font-family: var(--fuenteOrquestarte);
 }
-.form-container {
-  padding: 0 0 7rem;
-}
 .form-container h2 {
   text-align: center;
   color: var(--gris);
