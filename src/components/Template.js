@@ -16,6 +16,7 @@ function Template(props){
                             <Link to="/about" className="navegacion__enlaces">¿Quiénes somos?</Link>
                             <Link to="/galeria" className="navegacion__enlaces">Galería</Link>
                             <Link to="/contact" className="navegacion__enlaces">Contacto</Link>
+                            <Link to="/recital" className="navegacion__enlaces">Recitales</Link>
                         </div>
                     </div>
 

@@ -58,6 +58,9 @@ img {
 .centrar-texto {
   text-align: center;
 }
+.negrita {
+  font-weight: bold;
+}
 
 .barra {
   text-align: center;
@@ -269,10 +272,11 @@ blockquote {
   flex-direction: column;
   align-items: center;
 }
-.repertorio{
-  width: 45rem;
-  display:flex;
-  justify-content: space-around;
+
+.pieza-flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 2.5rem;
 }
 @media (max-width: 400px) {
   .repertorio {
@@ -293,11 +297,7 @@ blockquote {
   font-size: 1.5rem;
   margin-bottom: 3.5rem;
 }
-.repertorio {
-  white-space: pre-wrap;
-      white-space: -moz-pre-wrap;
-      white-space: -o-pre-wrap;
-}
+
 /* About us */
 
 .about-us {
