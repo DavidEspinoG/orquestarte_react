@@ -65,7 +65,7 @@ const recitalData = [
         ]
     },
     {
-        name: "Anel Arjona",
+        name: "Alan Salas Carrillo",
         repertoire: [
             {
                 title: "Jazz Reflection",
