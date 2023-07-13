@@ -6,7 +6,7 @@ function Recital(){
     return (
         <Template>
             <div className="contenedor centrar-texto">
-                <h1 className="titulo-recital">10 de diciembre de 2022</h1>
+                <h1 className="titulo-recital">15 de julio de 2023</h1>
                 <div className="contenedor programa">
                     {recitalData.map((alumno) => {
                         return (
@@ -29,4 +29,4 @@ function Recital(){
     )
 }   
 
-export { Recital }
+export { Recital };

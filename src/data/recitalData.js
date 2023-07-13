@@ -1,65 +1,91 @@
 const recitalData = [
     {
-        name: "Helián Flores Ramírez",
+        name: "Leonardo Uriel Cásares Hernández",
         repertoire: [
             {
-                title: "Balada",
-                composer: "John Thompson"
+                title: "Preludio y Fuga en mi menor",
+                composer: "J. S. Bach"
             },
             {
-                title: "Beisbol",
-                composer: "John Thompson"
-            },
-            {
-                title: "La lluvia",
-                composer: "John Thompson"
-            },
-            {
-                title: "El cartero",
-                composer: "John Thompson"
-            },
-            {
-                title: "Campanas",
-                composer: "John Thompson"
+                title: "Canción sin palabras Op.19 #3",
+                composer: "F. Mendelssohn"
             },
         ]
-
     },
     {
-        name: "Axel Sebastián García Martínez",
+        name: "Emma Sofía Chan",
         repertoire: [
             {
-                title: "Soldados de juguete",
+                title: "El pato y la rana",
                 composer: "John Thompson"
             },
             {
-                title: "Mi rancho en los llanos",
+                title: "El pato y la rana",
+                composer: "John Thompson"
+            },
+            {
+                title: "La tierra de la música",
                 composer: "John Thompson"
             },
         ]
     },
     {
-        name: "Diego González León",
+        name: "María Regina Cortés Aguilar",
         repertoire: [
             {
-                title: "Ejercicio de 5 notas",
+                title: "Firefly",
+                composer: "N. Fander"
+            },
+            {
+                title: "Oda a la alegría",
+                composer: "L. v. Beethoven"
+            },
+        ]
+    },
+    {
+        name: "Jassir Argüelles",
+        repertoire: [
+            {
+                title: "The Whirling leaves",
+                composer: "N. Fander"
+            },
+            {
+                title: "Can can",
+                composer: "J. Offenbach"
+            },
+        ]
+    },
+    {
+        name: "Anel Arjona",
+        repertoire: [
+            {
+                title: "The hounted mouse",
+                composer: "N. Fander"
+            },
+        ]
+    },
+    {
+        name: "Anel Arjona",
+        repertoire: [
+            {
+                title: "Jazz Reflection",
+                composer: "N. Fander"
+            },
+            {
+                title: "Snowfall",
+                composer: "N. Fander"
+            },
+        ]
+    },
+    {
+        name: "Ana Chan",
+        repertoire: [
+            {
+                title: "La coronación",
                 composer: "David Espino"
             },
             {
-                title: "Fiesta de cumpleaños",
-                composer: "John Thompson"
-            },
-        ]
-    },
-    {
-        name: "Martha Dionicio Gurgua",
-        repertoire: [
-            {
-                title: "Fiesta de cumpleaños",
-                composer: "John Thompson"
-            },
-            {
-                title: "Balada",
+                title: "Cancioncita de primavera",
                 composer: "John Thompson"
             },
         ]
@@ -68,12 +94,24 @@ const recitalData = [
         name: "Carolina Maldonado Cruz",
         repertoire: [
             {
-                title: "We Wish You a Merry Christmas",
-                composer: "Tradicional"
+                title: "El reloj de cucú",
+                composer: "John Thompson"
             },
             {
-                title: "Joy to the World",
-                composer: "George Frederich Händel"
+                title: "El manicero",
+                composer: "John Thompson"
+            },
+            {
+                title: "La fiesta española",
+                composer: "John Thompson"
+            },
+            {
+                title: "El coro de las ranas",
+                composer: "John Thompson"
+            },
+            {
+                title: "El múcaro",
+                composer: "John Thompson"
             },
         ]
     },
@@ -81,12 +119,20 @@ const recitalData = [
         name: "Lizzy Reds",
         repertoire: [
             {
-                title: "Little Spring Song",
+                title: "The knight and the lady",
                 composer: "John Thompson"
             },
             {
-                title: "What Child is This",
-                composer: "Tradicional"
+                title: "Air",
+                composer: "W. A. Mozart"
+            },
+            {
+                title: "A little waltz",
+                composer: "John Thompson"
+            },
+            {
+                title: "Owl's question",
+                composer: "John Thompson"
             },
         ]
     },
@@ -94,11 +140,7 @@ const recitalData = [
         name: "Isabella Santos García",
         repertoire: [
             {
-                title: "Married Life",
-                composer: "Michael Giaccino"
-            },
-            {
-                title: "Patrones",
+                title: "Tambores indios",
                 composer: "John Thompson"
             },
             {
@@ -106,66 +148,20 @@ const recitalData = [
                 composer: "John Thompson"
             },
             {
-                title: "Corre riachuelo",
+                title: "El hombre en la luna",
                 composer: "John Thompson"
             },
             {
-                title: "Los cisnes en el lago",
+                title: "Acordes",
                 composer: "John Thompson"
             },
             {
-                title: "Corre riachuelo",
-                composer: "John Thompson"
-            },
-        ]
-    },
-    {
-        name: "Martha González León",
-        repertoire: [
-            {
-                title: "Spanish Fiesta",
+                title: "Vadeando el río",
                 composer: "John Thompson"
             },
             {
-                title: "Frog Chorus",
-                composer: "John Thompson"
-            },
-            {
-                title: "The Owl's Question",
-                composer: "John Thompson"
-            },
-            {
-                title: "The Knight and the lady",
-                composer: "John Thompson"
-            },
-            {
-                title: "O Come All Ye Faithful",
-                composer: "John Thompson"
-            },
-        ]
-    },
-    {
-        name: "Martha González León",
-        repertoire: [
-            {
-                title: "Spanish Fiesta",
-                composer: "John Thompson"
-            },
-            {
-                title: "Frog Chorus",
-                composer: "John Thompson"
-            },
-            {
-                title: "The Owl's Question",
-                composer: "John Thompson"
-            },
-            {
-                title: "The Knight and the lady",
-                composer: "John Thompson"
-            },
-            {
-                title: "O Come All Ye Faithful",
-                composer: "John Thompson"
+                title: "Improvisación",
+                composer: "Isabella Santos García"
             },
         ]
     },
@@ -173,26 +169,12 @@ const recitalData = [
         name: "Verónica Espadas Herrera",
         repertoire: [
             {
-                title: "Sonata Claro de luna",
-                composer: "Ludwig van Beethoven"
+                title: "Comptine d'une autre eté",
+                composer: "Yann Tiersen"
             },
-        ]
-    },
-    {
-        name: "Leonardo Cásares",
-        repertoire: [
             {
-                title: "Sonata Hob. XVI/1, primer movimiento",
-                composer: "Franz Joseph Haydn"
-            },
-        ]
-    },
-    {
-        name: "David Espino García",
-        repertoire: [
-            {
-                title: "Vals primaveral",
-                composer: "Ricardo Castro"
+                title: "Interstellar",
+                composer: "Hans Zimmer"
             },
         ]
     },

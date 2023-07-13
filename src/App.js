@@ -1,13 +1,13 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { HomePage } from "./routes/HomePage";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { AboutUs } from "./routes/AboutUs";
-import { Gallery } from "./routes/Gallery";
 import { Contact } from "./routes/Contact";
+import { Gallery } from "./routes/Gallery";
+import { HomePage } from "./routes/HomePage";
 import { Recital } from "./routes/Recital";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<HomePage/>}/>
         <Route path="/about" element={<AboutUs/>}/>
@@ -15,7 +15,7 @@ function App() {
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/recital" element={<Recital/>}/>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

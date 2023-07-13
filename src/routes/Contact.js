@@ -1,7 +1,7 @@
-import React, { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
+import React, { useRef, useState } from "react";
 import { Template } from "../components/Template";
-import  emailjs from "@emailjs/browser";
-import { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY } from "../secrets";
+import { PUBLIC_KEY, SERVICE_ID, TEMPLATE_ID } from "../secrets";
 
 
 function Contact(){
@@ -62,4 +62,4 @@ function Contact(){
     )
 }
 
-export { Contact }
+export { Contact };
