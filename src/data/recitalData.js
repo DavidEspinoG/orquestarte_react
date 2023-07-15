@@ -22,7 +22,7 @@ const recitalData = [
                 composer: "John Thompson"
             },
             {
-                title: "El pato y la rana",
+                title: "Tambores indios",
                 composer: "John Thompson"
             },
             {
