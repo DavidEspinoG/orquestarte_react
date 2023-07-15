@@ -1,6 +1,7 @@
 const recitalData = [
     {
         name: "Leonardo Uriel Cásares Hernández",
+        teacher: 'David Espino García',
         repertoire: [
             {
                 title: "Preludio y Fuga en mi menor",
@@ -14,6 +15,7 @@ const recitalData = [
     },
     {
         name: "Emma Sofía Chan",
+        teacher: 'David Espino García',
         repertoire: [
             {
                 title: "El pato y la rana",
@@ -31,10 +33,12 @@ const recitalData = [
     },
     {
         name: "María Regina Cortés Aguilar",
+        teacher: 'Sandra Contreras Pinto',
+        accomp: true,
         repertoire: [
             {
                 title: "Firefly",
-                composer: "N. Fander"
+                composer: "N. Fander",
             },
             {
                 title: "Oda a la alegría",
@@ -44,6 +48,7 @@ const recitalData = [
     },
     {
         name: "Jassir Argüelles",
+        teacher: 'Sandra Contreras Pinto',
         repertoire: [
             {
                 title: "The Whirling leaves",
@@ -57,6 +62,7 @@ const recitalData = [
     },
     {
         name: "Anel Arjona",
+        teacher: 'Sandra Contreras Pinto',
         repertoire: [
             {
                 title: "The hounted mouse",
@@ -66,6 +72,7 @@ const recitalData = [
     },
     {
         name: "Alan Salas Carrillo",
+        teacher: 'Sandra Contreras Pinto',
         repertoire: [
             {
                 title: "Jazz Reflection",
@@ -79,6 +86,7 @@ const recitalData = [
     },
     {
         name: "Ana Chan",
+        teacher: 'David Espino García',
         repertoire: [
             {
                 title: "La coronación",
@@ -92,6 +100,7 @@ const recitalData = [
     },
     {
         name: "Carolina Maldonado Cruz",
+        teacher: 'David Espino García',
         repertoire: [
             {
                 title: "El reloj de cucú",
@@ -117,6 +126,7 @@ const recitalData = [
     },
     {
         name: "Lizzy Reds",
+        teacher: 'David Espino García',
         repertoire: [
             {
                 title: "The knight and the lady",
@@ -138,6 +148,7 @@ const recitalData = [
     },
     {
         name: "Isabella Santos García",
+        teacher: 'David Espino García',
         repertoire: [
             {
                 title: "Tambores indios",
@@ -167,6 +178,7 @@ const recitalData = [
     },
     {
         name: "Verónica Espadas Herrera",
+        teacher: 'David Espino García',
         repertoire: [
             {
                 title: "Comptine d'une autre eté",

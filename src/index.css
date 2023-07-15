@@ -382,3 +382,8 @@ blockquote {
 .form button:hover {
   cursor: pointer;
 }
+
+.maestro {
+  font-size: 16px;
+  color: var(--naranja)
+}

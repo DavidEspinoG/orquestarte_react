@@ -20,6 +20,8 @@ function Recital(){
                                         </div>
                                     ))}
                                 </div>
+                                <p className="maestro">Maestro(a): {alumno.teacher}</p>
+                                {alumno.accomp && <p className="compositor">Acompañada por: {alumno.teacher}</p>}
                             </>
                         )
                     })}
