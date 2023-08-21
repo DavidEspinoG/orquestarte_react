@@ -387,3 +387,7 @@ blockquote {
   font-size: 16px;
   color: var(--naranja)
 }
+
+.main-content-container {
+  min-height: calc(100vh - 210px);
+}

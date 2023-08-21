@@ -27,7 +27,7 @@ function Contact(){
                 <div className="contenedor">
                     <div className="form-container">
                     <h2> ¿Interesad@? Déjanos tus datos y nos pondremos en contacto </h2>
-                        <form className="form" ref={form}onSubmit={sendMail}
+                        <form className="form" ref={form} onSubmit={sendMail}
                         >
                             <label htmlFor="name">Tu nombre</label>
                             <input type='text' id="name" name="client_name" value={name} 
