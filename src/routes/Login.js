@@ -2,8 +2,11 @@ import React from "react";
 import { Template } from "../components/Template";
 import { Title } from "../components/Title";
 import { useState } from "react";
+import { fetchLogin } from "../redux/userSlice";
+import { useDispatch } from "react-redux";
 
 const Login = () => {
+  const dispatch = useDispatch();
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
   return (
@@ -13,7 +16,7 @@ const Login = () => {
           <div className="form-container">
             <form className="form" onSubmit={(e) => {
               e.preventDefault();
-              console.log({email, password})
+              dispatch(fetchLogin({email, password}))
             }}>
               <label htmlFor="e-mail">E-mail</label>
               <input required type='email' id="e-mail"

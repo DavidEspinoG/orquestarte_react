@@ -3,14 +3,23 @@ import axios from "axios";
 import { BASE_URL } from "../constants";
 
 export const fetchLogin = createAsyncThunk('users/login', 
-  async({email, password}) => {
-    const response = await axios.get(`${BASE_URL}/users/login`, {
-      params:{
-        email, 
-        password
+  async({email, password}, {rejectWithValue}) => {
+
+    try {
+      const response = await axios.get(`${BASE_URL}/users/login`, {
+        params:{
+          email, 
+          password
+        }
+      } )
+      return response.data;
+    } catch(err){
+      if(!err.response){
+        throw err
       }
-    } )
-    return response.data;
+      return rejectWithValue(err.response.data);
+    }
+    
   }
 )
 
@@ -21,15 +30,26 @@ const userSlice = createSlice({
     isAdmin: false, 
     id: null,
     loading: false,
-    error: null, 
-    test: null,
+    error: null,
+    errorMessage: null, 
   }, 
   extraReducers: (builder) => {
     builder
       .addCase(fetchLogin.fulfilled, (state, action) => {
         state.loading = false; 
-        state.error = null; 
-        state.test = action.payload;
+        state.error = false; 
+        state.errorMessage = null;
+        state.name = action.payload.name;
+        state.isAdmin = action.payload.is_admin;
+        state.id = action.payload.id;
+      })
+      .addCase(fetchLogin.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(fetchLogin.rejected, (state, action) => {
+        state.loading = false; 
+        state.error = true;
+        state.errorMessage = action.payload.message;
       })
   }
 });
