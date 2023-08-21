@@ -2,13 +2,13 @@ import { Template } from "../components/Template";
 import React from "react";
 import { Title } from "../components/Title";
 
-const Pagos = () => {
+const Admin = () => {
   return(
   <>
-    <Template customLinks={[{to: '/login', text: 'Iniciar sesión'}]}>
-        <Title>Pagos</Title>
+    <Template pagos={true}>
+        <Title>Admin</Title>
     </Template>
   </>)
 }
 
-export default Pagos;
+export default Admin;

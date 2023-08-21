@@ -20,20 +20,17 @@ function Template(props){
                                 <Link to="/pagos" className="navegacion__enlaces">Pagos</Link>
                             </div>
                         }
-                        {props.pagos && 
+                        {props.customLinks && 
                             <div className="navegacion">
-                                <Link to="/login" className="navegacion__enlaces">Mis pagos</Link>
-                                <Link to="/galeria" className="navegacion__enlaces">Cerrar sesión</Link>
+                                {props.customLinks.map(link => <Link to={link.to} className="navegacion__enlaces">{link.text}</Link>)}
                             </div>
                         }
-                            
-                        
-                        
                     </div>
-
                 </div>
             </header>
-            {props.children}
+            <div className="main-content-container">
+                {props.children}
+            </div>
             <footer>
                 <div className="footer">
                     <div className="contenedor">
