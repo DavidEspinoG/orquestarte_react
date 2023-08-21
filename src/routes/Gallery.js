@@ -19,7 +19,7 @@ import thumb7 from "../assets/gallery/thumb/galeria7.jpg";
 class Gallery extends React.Component {
   render() {
     return (
-        <Template>
+        <Template home={true}>
             <div className="contenedor">
             <ImageGallery 
                 items={images} 

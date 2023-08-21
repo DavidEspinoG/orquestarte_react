@@ -4,7 +4,7 @@ import { Testimonial } from "../components/Testimonial";
 
 function HomePage() {
     return (
-        <Template>
+        <Template home={true}>
             <Testimonial/>
         </Template>
     )

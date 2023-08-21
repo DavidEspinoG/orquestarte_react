@@ -23,7 +23,7 @@ function Contact(){
     }
     return(
         <>
-            <Template>
+            <Template home={true}>
                 <div className="contenedor">
                     <div className="form-container">
                     <h2> ¿Interesad@? Déjanos tus datos y nos pondremos en contacto </h2>

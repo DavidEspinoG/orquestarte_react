@@ -8,7 +8,7 @@ import img3 from "../assets/img/about3.png";
 function AboutUs(){
     return(
         <>
-            <Template>
+            <Template home={true}>
                 <div className="contenedor">
                     <AboutElement
                         image={img1}

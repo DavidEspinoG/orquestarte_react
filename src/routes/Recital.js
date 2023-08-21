@@ -4,7 +4,7 @@ import { recitalData } from "../data/recitalData";
 
 function Recital(){
     return (
-        <Template>
+        <Template home={true}>
             <div className="contenedor centrar-texto">
                 <h1 className="titulo-recital">15 de julio de 2023</h1>
                 <div className="contenedor programa">

@@ -12,12 +12,23 @@ function Template(props){
                                 <h2 className="logo__linea2">EDUCACIÓN MUSICAL</h2>
                             </Link>
                         </div>
-                        <div className="navegacion">
-                            <Link to="/about" className="navegacion__enlaces">¿Quiénes somos?</Link>
-                            <Link to="/galeria" className="navegacion__enlaces">Galería</Link>
-                            <Link to="/contact" className="navegacion__enlaces">Contacto</Link>
-                            <Link to="/recital" className="navegacion__enlaces">Recitales</Link>
-                        </div>
+                        {props.home && 
+                            <div className="navegacion">
+                                <Link to="/about" className="navegacion__enlaces">¿Quiénes somos?</Link>
+                                <Link to="/galeria" className="navegacion__enlaces">Galería</Link>
+                                <Link to="/contact" className="navegacion__enlaces">Contacto</Link>
+                                <Link to="/pagos" className="navegacion__enlaces">Pagos</Link>
+                            </div>
+                        }
+                        {props.pagos && 
+                            <div className="navegacion">
+                                <Link to="/login" className="navegacion__enlaces">Mis pagos</Link>
+                                <Link to="/galeria" className="navegacion__enlaces">Cerrar sesión</Link>
+                            </div>
+                        }
+                            
+                        
+                        
                     </div>
 
                 </div>
