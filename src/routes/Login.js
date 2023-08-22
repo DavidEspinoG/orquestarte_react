@@ -4,14 +4,30 @@ import { Title } from "../components/Title";
 import { useState } from "react";
 import { fetchLogin } from "../redux/userSlice";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const errorMessage = useSelector(state => state.user.errorMessage);
+  const userId = useSelector(state => state.user.id);
+  const userIsAdmin = useSelector(state => state.user.isAdmin);
   const dispatch = useDispatch();
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
+  useEffect(() => {
+    if(userId){
+      if(userIsAdmin){
+        navigate('/admin');
+      } else {
+        navigate('/pagos');
+      }
+    }
+  })
   return (
     <>
-      <Template>
+      <Template home={true}>
         <Title>Iniciar sesión</Title>
           <div className="form-container">
             <form className="form" onSubmit={(e) => {
@@ -32,6 +48,7 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
               ></input>
               <button type="submit">Enviar</button>
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
             </form>
           </div>
       </Template>

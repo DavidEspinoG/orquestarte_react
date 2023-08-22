@@ -4,7 +4,6 @@ import { BASE_URL } from "../constants";
 
 export const fetchLogin = createAsyncThunk('users/login', 
   async({email, password}, {rejectWithValue}) => {
-
     try {
       const response = await axios.get(`${BASE_URL}/users/login`, {
         params:{
@@ -24,9 +23,9 @@ export const fetchLogin = createAsyncThunk('users/login',
 )
 
 const userSlice = createSlice({
-  name: 'users',
+  name: 'user',
   initialState: {
-    name: '',
+    name: null,
     isAdmin: false, 
     id: null,
     loading: false,
