@@ -6,6 +6,8 @@ import { Gallery } from "./routes/Gallery";
 import { HomePage } from "./routes/HomePage";
 import { Recital } from "./routes/Recital";
 import Login from "./routes/Login";
+import Admin from "./routes/Admin";
+import MyProfile from "./routes/MyProfile";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path="/galeria" element={<Gallery/>}/>
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/recital" element={<Recital/>}/>
+        <Route path="/admin" element={<Admin/>}/>
+        <Route path="/myProfile" element={<MyProfile/>}/>
       </Routes>
     </BrowserRouter>
   );

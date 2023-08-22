@@ -21,7 +21,7 @@ const Login = () => {
       if(userIsAdmin){
         navigate('/admin');
       } else {
-        navigate('/pagos');
+        navigate('/myProfile');
       }
     }
   })
