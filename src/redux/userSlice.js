@@ -18,9 +18,8 @@ export const fetchLogin = createAsyncThunk('users/login',
       }
       return rejectWithValue(err.response.data);
     }
-    
   }
-)
+);
 
 const userSlice = createSlice({
   name: 'user',
