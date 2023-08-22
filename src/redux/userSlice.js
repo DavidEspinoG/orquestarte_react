@@ -11,6 +11,7 @@ export const fetchLogin = createAsyncThunk('users/login',
           password
         }
       } )
+      sessionStorage.setItem('user', JSON.stringify(response.data));
       return response.data;
     } catch(err){
       if(!err.response){
@@ -29,7 +30,16 @@ const userSlice = createSlice({
     id: null,
     loading: false,
     error: null,
-    errorMessage: null, 
+    errorMessage: null,
+    token: null,
+  },
+  reducers: {
+    setUser: (state, action) => {
+      state.name = action.payload.name;
+      state.isAdmin = action.payload.is_admin;
+      state.id = action.payload.id;
+      state.token = action.payload.token;
+    }
   }, 
   extraReducers: (builder) => {
     builder
@@ -40,6 +50,7 @@ const userSlice = createSlice({
         state.name = action.payload.name;
         state.isAdmin = action.payload.is_admin;
         state.id = action.payload.id;
+        state.token = action.payload.token;
       })
       .addCase(fetchLogin.pending, (state) => {
         state.loading = true;
@@ -51,5 +62,7 @@ const userSlice = createSlice({
       })
   }
 });
+
+export const { setUser } = userSlice.actions;
 
 export default userSlice;

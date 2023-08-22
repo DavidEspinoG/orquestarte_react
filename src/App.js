@@ -8,8 +8,23 @@ import { Recital } from "./routes/Recital";
 import Login from "./routes/Login";
 import Admin from "./routes/Admin";
 import MyProfile from "./routes/MyProfile";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setUser } from "./redux/userSlice";
+import { useSelector } from "react-redux";
 
 function App() {
+  const userId = useSelector((state) => state.user.id);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if(!userId){
+      const user = sessionStorage.getItem('user');
+      if(user){
+        const parsedUser = JSON.parse(user);
+        dispatch(setUser(parsedUser));
+      }
+    }
+  });
   return (
     <BrowserRouter>
       <Routes>
