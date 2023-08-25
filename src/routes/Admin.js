@@ -13,6 +13,9 @@ const Admin = () => {
     if(!isAdmin){
       navigate('/');
     }
+    if(isAdmin){
+      
+    }
   })
 
   return(
@@ -21,6 +24,7 @@ const Admin = () => {
       <Title>Admin</Title>
       <div className="contenedor">
         <h3>Hola, {userName}</h3>
+        <h3>Colegios: </h3>
       </div>
     </Template>
   </>)
