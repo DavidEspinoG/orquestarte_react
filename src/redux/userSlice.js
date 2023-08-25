@@ -28,12 +28,10 @@ export const fetchSignUp = createAsyncThunk('/users/signup',
 export const fetchLogin = createAsyncThunk('users/login', 
   async({email, password}, {rejectWithValue}) => {
     try {
-      const response = await axios.get(`${BASE_URL}/users/login`, {
-        params:{
+      const response = await axios.post(`${BASE_URL}/users/login`, {
           email, 
           password
-        }
-      } )
+        })
       sessionStorage.setItem('user', JSON.stringify(response.data));
       return response.data;
     } catch(err){
@@ -68,7 +66,14 @@ const userSlice = createSlice({
       state.isAdmin = action.payload.is_admin;
       state.id = action.payload.id;
       state.token = action.payload.token;
-    }
+    }, 
+    logout: (state) => {
+      state.name = null; 
+      state.isAdmin = false; 
+      state.id = null;
+      state.token = null;
+      sessionStorage.removeItem('user');
+    },
   }, 
   extraReducers: (builder) => {
     builder
@@ -87,7 +92,7 @@ const userSlice = createSlice({
       .addCase(fetchLogin.rejected, (state, action) => {
         state.loading = false; 
         state.error = true;
-        state.errorMessage = action.payload.message;
+        state.errorMessage = 'Hubo un error en el servidor, favor de intentar más tarde';
       })
       .addCase(fetchSignUp.pending, (state) => {
         state.signUp.loading = true;
@@ -105,6 +110,6 @@ const userSlice = createSlice({
   }
 });
 
-export const { setUser } = userSlice.actions;
+export const { setUser, logout } = userSlice.actions;
 
 export default userSlice;

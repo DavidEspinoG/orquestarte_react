@@ -12,10 +12,10 @@ const MyProfile = () => {
     if(!userName) {
       navigate('/login');
     }
-  })
+  }, [userName])
   return(
   <>
-    <Template home={true}>
+    <Template myProfile={true}>
         <Title>Mi perfil</Title>
         <div className="contenedor">
           <h3>Hola, {userName}</h3>

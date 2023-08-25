@@ -1,7 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { logout } from "../redux/userSlice";
 
 function Template(props){
+  const dispatch = useDispatch();
+  const userId = useSelector(state => state.user.id);
   return (
     <>
       <header className="header">
@@ -18,7 +23,35 @@ function Template(props){
                 <Link to="/about" className="navegacion__enlaces">¿Quiénes somos?</Link>
                 <Link to="/galeria" className="navegacion__enlaces">Galería</Link>
                 <Link to="/contact" className="navegacion__enlaces">Contacto</Link>
-                <Link to="/login" className="navegacion__enlaces">Iniciar Sesión</Link>
+                {userId ?
+                <Link
+                  to="/"
+                  className="navegacion__enlaces"
+                  onClick={() => {
+                    dispatch(logout());
+                  }}
+                >
+                  Cerrar sesión
+                </Link> :
+                <Link to="/login" className="navegacion__enlaces">Iniciar Sesión</Link>}
+              </div>
+            }
+            {props.myProfile && 
+              <div className="navegacion">
+                {/* <Link to="/about" className="navegacion__enlaces">¿Quiénes somos?</Link>
+                <Link to="/galeria" className="navegacion__enlaces">Galería</Link>
+                <Link to="/contact" className="navegacion__enlaces">Contacto</Link> */}
+                {userId ?
+                <Link
+                  to="/"
+                  className="navegacion__enlaces"
+                  onClick={() => {
+                    dispatch(logout());
+                  }}
+                >
+                  Cerrar sesión
+                </Link> :
+                <Link to="/login" className="navegacion__enlaces">Iniciar Sesión</Link>}
               </div>
             }
             {props.customLinks && 

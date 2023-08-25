@@ -22,7 +22,7 @@ const Login = () => {
       if(userIsAdmin){
         navigate('/admin');
       } else {
-        navigate('/myProfile');
+        navigate('/miperfil');
       }
     }
   })

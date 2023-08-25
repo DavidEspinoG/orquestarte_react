@@ -38,7 +38,7 @@ function App() {
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/recital" element={<Recital/>}/>
         <Route path="/admin" element={<Admin/>}/>
-        <Route path="/myProfile" element={<MyProfile/>}/>
+        <Route path="/miperfil" element={<MyProfile/>}/>
       </Routes>
     </BrowserRouter>
   );
