@@ -4,6 +4,9 @@ import React from "react";
 import { useState } from "react";
 import { fetchSignUp } from "../redux/userSlice";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const [ email, setEmail ] = useState('');
@@ -12,6 +15,15 @@ const SignUp = () => {
   const [ password, setPassword ] = useState(''); 
   const [ schoolCode, setSchoolCode ] = useState('');
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const loading = useSelector(state => state.user.signUp.loading);
+  const success = useSelector(state => state.user.signUp.success);
+  useEffect(() => {
+    if(success){
+      alert('Usuario creado correctamente')
+      navigate('/login');
+    }
+  });
   return (
     <Template home={true}>
       <Title>Regístrate</Title>
@@ -48,7 +60,9 @@ const SignUp = () => {
             value={schoolCode}
             onChange={(e) => {setSchoolCode((e.target.value).trim().toUpperCase())}}
           />
-          <button type="submit">Enviar</button>
+          <button type="submit">
+            {!loading ? 'Enviar' : <div className="spinner-border"></div>}
+          </button>
         </form>
       </div>
     </Template>
