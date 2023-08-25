@@ -2,6 +2,8 @@ import { Template } from "../components/Template";
 import { Title } from "../components/Title";
 import React from "react";
 import { useState } from "react";
+import { fetchSignUp } from "../redux/userSlice";
+import { useDispatch } from "react-redux";
 
 const SignUp = () => {
   const [ email, setEmail ] = useState('');
@@ -9,6 +11,7 @@ const SignUp = () => {
   const [ lastName, setLastName ] = useState('');
   const [ password, setPassword ] = useState(''); 
   const [ schoolCode, setSchoolCode ] = useState('');
+  const dispatch = useDispatch();
   return (
     <Template home={true}>
       <Title>Regístrate</Title>
@@ -16,7 +19,7 @@ const SignUp = () => {
         <form className="form" 
           onSubmit={(e)=> {
             e.preventDefault();
-            console.log({email, password, schoolCode})
+            dispatch(fetchSignUp({firstName, lastName,email, password, schoolCode}))
           }}
         >
           <label htmlFor="name">Nombre</label>

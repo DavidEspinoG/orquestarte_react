@@ -2,6 +2,29 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { BASE_URL } from "../constants";
 
+export const fetchSignUp = createAsyncThunk('/users/signup', 
+  async({firstName, lastName, email, password, schoolCode }, {rejectWithValue}) => {
+    try {
+      const params = {
+        user: {
+          first_name: firstName, 
+          last_name: lastName, 
+          email: email,
+          password: password,
+        },
+        school_code: schoolCode,
+      }
+      const response = await axios.post(`${BASE_URL}/users/signup`, params)
+      return response.data
+    } catch(err){
+      if(!err){
+        throw err
+      }
+      return rejectWithValue(err.response.data)
+    }
+  }
+);
+
 export const fetchLogin = createAsyncThunk('users/login', 
   async({email, password}, {rejectWithValue}) => {
     try {
@@ -32,6 +55,12 @@ const userSlice = createSlice({
     error: null,
     errorMessage: null,
     token: null,
+    signUp: {
+      success: false,
+      message: '', 
+      loading: false,
+      error: false,
+    }
   },
   reducers: {
     setUser: (state, action) => {
@@ -59,6 +88,19 @@ const userSlice = createSlice({
         state.loading = false; 
         state.error = true;
         state.errorMessage = action.payload.message;
+      })
+      .addCase(fetchSignUp.pending, (state) => {
+        state.signUp.loading = true;
+      })
+      .addCase(fetchSignUp.fulfilled, (state, action) => {
+        state.signUp.loading = false;
+        state.signUp.success = true;
+        state.signUp.message = action.payload;
+      })
+      .addCase(fetchSignUp.rejected, (state, action) => {
+        state.signUp.loading = false;
+        state.signUp.error = true;
+        state.signUp.message = action.payload;
       })
   }
 });
