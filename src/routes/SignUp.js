@@ -5,6 +5,8 @@ import { useState } from "react";
 
 const SignUp = () => {
   const [ email, setEmail ] = useState('');
+  const [ firstName, setFirstName ] = useState('');
+  const [ lastName, setLastName ] = useState('');
   const [ password, setPassword ] = useState(''); 
   const [ schoolCode, setSchoolCode ] = useState('');
   return (
@@ -17,13 +19,23 @@ const SignUp = () => {
             console.log({email, password, schoolCode})
           }}
         >
+          <label htmlFor="name">Nombre</label>
+          <input required type="text" id="name" autoComplete="given-name"
+            value={firstName}
+            onChange={(e) => {setFirstName(e.target.value)}}
+          />
+          <label htmlFor="last-name">Apellidos</label>
+          <input required type="text" id="last-name" autoComplete="family-name"
+            value={lastName}
+            onChange={(e) => {setLastName(e.target.value)}}
+          />
           <label htmlFor="e-mail">E-mail</label>
-          <input required type="email" id="e-mail"
+          <input required type="email" id="e-mail" autoComplete="email"
             value={email}
             onChange={(e) => {setEmail(e.target.value)}}
           />
           <label htmlFor="password">Contraseña</label>
-          <input required type="password" id="password"
+          <input required type="password" id="password" autoComplete="password"
             value={password}
             onChange={(e) => {setPassword(e.target.value)}}
           />
