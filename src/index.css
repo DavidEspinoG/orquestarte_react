@@ -384,6 +384,12 @@ blockquote {
   border-radius: .5rem;
   height: 4rem;
 }
+
+.form span {
+  color: var(--gris);
+  font-size: 16px;
+}
+
 .form button:hover {
   cursor: pointer;
 }
@@ -400,4 +406,13 @@ blockquote {
 .error-message {
   color: red;
   font-size: 16px;
+}
+
+.form-link {
+  color: var(--gris);
+  font-size: 20px;
+}
+
+.form-link:hover {
+  color: #F7882F;
 }

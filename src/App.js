@@ -12,7 +12,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "./redux/userSlice";
 import { useSelector } from "react-redux";
-import SignUp from "./routes/SignIn";
+import SignUp from "./routes/SignUp";
 
 function App() {
   const userId = useSelector((state) => state.user.id);
@@ -32,6 +32,7 @@ function App() {
         <Route path="/" element={<HomePage/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/signup" element={<SignUp/>}/>
+        <Route path="/inscripciones" element={<SignUp/>}/>
         <Route path="/about" element={<AboutUs/>}/>
         <Route path="/galeria" element={<Gallery/>}/>
         <Route path="/contact" element={<Contact/>}/>

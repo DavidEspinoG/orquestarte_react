@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -49,6 +50,7 @@ const Login = () => {
               ></input>
               <button type="submit">Enviar</button>
             {errorMessage && <p className="error-message">{errorMessage}</p>}
+            <Link to="/signup" className="form-link">Registrarse</Link>
             </form>
           </div>
       </Template>
