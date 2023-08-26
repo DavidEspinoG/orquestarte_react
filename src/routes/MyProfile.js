@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { fetchStudentsFromCurrentUser } from "../redux/studentsSlice";
 import { useDispatch } from "react-redux";
+import StudentsFromUser from "../components/StudentsFromUser";
 
 const MyProfile = () => {
   const userName = useSelector(state => state.user.name);
@@ -23,7 +24,8 @@ const MyProfile = () => {
     <Template myProfile={true}>
         <Title>Mi perfil</Title>
         <div className="contenedor">
-          <h3>Hola, {userName}</h3>
+          <h3>Bienvenido, {userName}</h3>
+          <StudentsFromUser/>
         </div>
     </Template>
   </>)
