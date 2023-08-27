@@ -1,0 +1,13 @@
+.add-to-cart-button {
+  background-color: var(--naranja);
+  color: var(--blanco);
+  font-family: var(--fuenteOrquestarte);
+  font-size: 13px;
+  border: 0;
+  border-radius: .5rem;
+  height: 4rem;
+}
+
+.add-to-cart-button:hover {
+  background-color: var(--gris)
+}

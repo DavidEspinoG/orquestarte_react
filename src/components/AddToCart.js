@@ -1,8 +1,9 @@
 import React from "react";
+import '../styles/AddToCart.css';
 
 const AddToCart = () => {
   return(
-    <button>Add to cart</button>
+    <button className="add-to-cart-button">Añadir al carrito</button>
   )
 };
 

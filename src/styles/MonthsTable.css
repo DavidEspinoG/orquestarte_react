@@ -1,7 +1,19 @@
 .months-table {
-  width: 100%;
+  width: 90%;
   font-size: 16px;
   text-align: center;
   color: var(--gris);
-  margin-top: 20px;
+  margin: 0 auto;
+}
+
+.months-table thead {
+  color: white;
+}
+
+.months-table td {
+  padding: 20px;
+}
+
+.months-table tr:nth-child(even){
+  background-color: var(--amarillo);
 }
