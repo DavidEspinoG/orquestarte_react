@@ -28,6 +28,12 @@ const studentsSlice = createSlice({
     error: false, 
     message: null,
   }, 
+  reducers: {
+    deleteStudents: (state) => {
+      console.log('deleting students')
+      state.currentUserStudents = [];
+    },
+  },
   extraReducers: (builder) => {
     builder
     .addCase(fetchStudentsFromCurrentUser.pending, (state) => {
@@ -48,4 +54,6 @@ const studentsSlice = createSlice({
     })
   }
 });
+
+export const { deleteStudents } = studentsSlice.actions;
 export default studentsSlice;

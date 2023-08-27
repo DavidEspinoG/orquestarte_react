@@ -3,27 +3,39 @@ import { createSlice } from "@reduxjs/toolkit";
 const cartSlice = createSlice({
   name: 'cart', 
   initialState: {
-    ids: [], 
     elements: [],
     cartExist: false,
   },
   reducers: {
     getCartFromLocalStorage: (state) => {
-      const localCart = JSON.parse(localStorage.getItem('cart'));
+      const localCart = JSON.parse(sessionStorage.getItem('cart'));
       if(localCart){
-        state.ids = localCart.ids;
         state.elements = localCart.elements;
         state.cartExist = localCart.cartExist;
       }
     },
     addElement: (state, action) => {
       state.elements.push(action.payload);
-      state.ids.push(action.payload.id);
       state.cartExist = true;
-      localStorage.setItem('cart', JSON.stringify(state));
-    }
+      sessionStorage.setItem('cart', JSON.stringify(state));
+    },
+    removeElement: (state, action) => {
+      const newArray = [...state.elements];
+      const index = newArray.findIndex(object => object.id === action.payload);
+      newArray.splice(index, 1);
+      state.elements = newArray;
+      if(newArray.length === 0){
+        state.cartExist = false;
+      };
+    }, 
+    emptyCart: (state) => {
+      console.log('removing cart')
+      state.elements = [];
+      state.cartExist = false; 
+      sessionStorage.removeItem('cart');
+    },
   }
 });
 
-export const { addElement, getCartFromLocalStorage } = cartSlice.actions;
+export const { addElement, getCartFromLocalStorage, removeElement, emptyCart } = cartSlice.actions;
 export default cartSlice;

@@ -68,6 +68,7 @@ const userSlice = createSlice({
       state.token = action.payload.token;
     }, 
     logout: (state) => {
+      console.log('loging out')
       state.name = null; 
       state.isAdmin = false; 
       state.id = null;

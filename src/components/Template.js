@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { logout } from "../redux/userSlice";
+import { deleteStudents } from "../redux/studentsSlice";
+import { emptyCart } from "../redux/cartSlice";
 
 function Template(props){
   const dispatch = useDispatch();
@@ -29,6 +31,8 @@ function Template(props){
                   to="/"
                   className="navegacion__enlaces"
                   onClick={() => {
+                    dispatch(emptyCart());
+                    dispatch(deleteStudents());
                     dispatch(logout());
                   }}
                 >
@@ -47,6 +51,8 @@ function Template(props){
                   className="navegacion__enlaces"
                   onClick={() => {
                     dispatch(logout());
+                    dispatch(emptyCart());
+                    dispatch(deleteStudents());
                   }}
                 >
                   Cerrar sesión
