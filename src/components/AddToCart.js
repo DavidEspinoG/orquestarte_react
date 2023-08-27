@@ -14,7 +14,7 @@ const AddToCart = ({month}) => {
     dispatch(addElement(month));
   };
   const handleRemoveFromCart = () => {
-    dispatch(removeElement(month.id));
+    dispatch(removeElement({id: month.id, price: month.price }));
   };
   const onCart = cartIds.includes(month.id);
   return(

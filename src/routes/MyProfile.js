@@ -11,6 +11,7 @@ import { getCartFromLocalStorage } from "../redux/cartSlice";
 
 const MyProfile = () => {
   const userName = useSelector(state => state.user.name);
+  const total = useSelector(state => state.cart.total);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -27,6 +28,7 @@ const MyProfile = () => {
         <Title>Mi perfil</Title>
         <h3 className="text-center">Bienvenido, {userName}</h3>
         <StudentsFromUser/>
+        <h3 className="contenedor">{`Total: $${total}`}</h3>
     </Template>
   </>)
 }
