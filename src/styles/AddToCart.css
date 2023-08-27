@@ -11,3 +11,14 @@
 .add-to-cart-button:hover {
   background-color: var(--gris)
 }
+
+.remove-from-cart-button {
+  background-color: var(--gris);
+  cursor: pointer;
+  color: var(--blanco);
+  font-family: var(--fuenteOrquestarte);
+  font-size: 13px;
+  border: 0;
+  border-radius: .5rem;
+  height: 4rem;
+}

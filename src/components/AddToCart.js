@@ -19,10 +19,10 @@ const AddToCart = ({month}) => {
   const onCart = cartIds.includes(month.id);
   return(
     <button 
-      className="add-to-cart-button"
+      className={onCart ? "remove-from-cart-button" : "add-to-cart-button"}
       onClick={onCart ? handleRemoveFromCart : handleAddToCart}
     >
-      {onCart ? 'Añadido' : 'Añadir al carrito'}
+      {onCart ? 'Quitar del carrito' : 'Añadir al carrito'}
     </button>
   )
 };
