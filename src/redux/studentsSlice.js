@@ -30,7 +30,6 @@ const studentsSlice = createSlice({
   }, 
   reducers: {
     deleteStudents: (state) => {
-      console.log('deleting students')
       state.currentUserStudents = [];
     },
   },

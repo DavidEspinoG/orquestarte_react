@@ -29,7 +29,6 @@ const cartSlice = createSlice({
       };
     }, 
     emptyCart: (state) => {
-      console.log('removing cart')
       state.elements = [];
       state.cartExist = false; 
       sessionStorage.removeItem('cart');
