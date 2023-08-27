@@ -8,12 +8,13 @@
 
 .months-table thead {
   color: white;
+  background-color: var(--gris);
 }
 
 .months-table td {
   padding: 20px;
 }
 
-.months-table tr:nth-child(even){
+.months-table tbody tr:nth-child(even){
   background-color: var(--amarillo);
 }

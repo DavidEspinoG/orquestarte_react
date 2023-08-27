@@ -5,13 +5,13 @@ import AddToCart from "./AddToCart";
 const MonthsTable = ({months}) => {
   return (
     <table className="months-table">
-      {/* <thead>
+      <thead>
         <tr>
           <td>Mes</td>
-          <td>Status</td>
+          <td>Precio</td>
           <td>Acción</td>
         </tr>
-      </thead> */}
+      </thead>
       <tbody>
           {months.map((month) => (
           <tr key={month.id}>
@@ -19,7 +19,7 @@ const MonthsTable = ({months}) => {
               {month.name}
             </td>
             <td>
-              {month.paid ? <div>Pagado</div> : <div>Por pagar</div>}
+              <p>{`$${month.price}`}</p>
             </td>
             <td><AddToCart /></td>
           </tr>
