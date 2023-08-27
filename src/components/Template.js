@@ -6,6 +6,7 @@ import { logout } from "../redux/userSlice";
 
 function Template(props){
   const dispatch = useDispatch();
+  const carrito = useSelector(state => state.cart.elements);
   const userId = useSelector(state => state.user.id);
   return (
     <>
@@ -38,9 +39,8 @@ function Template(props){
             }
             {props.myProfile && 
               <div className="navegacion">
-                {/* <Link to="/about" className="navegacion__enlaces">¿Quiénes somos?</Link>
-                <Link to="/galeria" className="navegacion__enlaces">Galería</Link>
-                <Link to="/contact" className="navegacion__enlaces">Contacto</Link> */}
+                <Link to="/miperfil/nuevoalumno" className="navegacion__enlaces">Añadir alumno</Link>
+                <Link to="/miperfil/carrito" className="navegacion__enlaces">Carrito({`${carrito.length}`})</Link>
                 {userId ?
                 <Link
                   to="/"

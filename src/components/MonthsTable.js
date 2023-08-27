@@ -21,7 +21,7 @@ const MonthsTable = ({months}) => {
             <td>
               <p>{`$${month.price}`}</p>
             </td>
-            <td><AddToCart /></td>
+            <td><AddToCart month={month}/></td>
           </tr>
           ))}
       </tbody>
