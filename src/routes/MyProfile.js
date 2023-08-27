@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { fetchStudentsFromCurrentUser } from "../redux/studentsSlice";
 import { useDispatch } from "react-redux";
 import StudentsFromUser from "../components/StudentsFromUser";
+import { getCartFromLocalStorage } from "../redux/cartSlice";
 
 const MyProfile = () => {
   const userName = useSelector(state => state.user.name);
@@ -17,6 +18,7 @@ const MyProfile = () => {
       navigate('/login');
     } else {
       dispatch(fetchStudentsFromCurrentUser());
+      dispatch(getCartFromLocalStorage());
     }
   }, [userName])
   return(
