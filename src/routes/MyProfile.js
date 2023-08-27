@@ -23,10 +23,8 @@ const MyProfile = () => {
   <>
     <Template myProfile={true}>
         <Title>Mi perfil</Title>
-        <div className="contenedor">
-          <h3>Bienvenido, {userName}</h3>
-          <StudentsFromUser/>
-        </div>
+        <h3 className="text-center">Bienvenido, {userName}</h3>
+        <StudentsFromUser/>
     </Template>
   </>)
 }

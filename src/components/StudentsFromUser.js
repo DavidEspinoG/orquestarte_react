@@ -1,15 +1,17 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import MonthsTable from "./MonthsTable";
 
 const StudentsFromUser = () => {
   const students = useSelector(state => state.students.currentUserStudents);
-
   return(
     <div className="myStudents">
-      <h4>Estudiantes registrados:</h4>
       {students ? 
       students.map(student => (
-        <p key={student.id}>{`${student.first_name} ${student.last_name}`}</p>
+        <div key={student.id}>
+          <h4 className="text-center mt-3 mb-3">Alumno: {`${student.first_name} ${student.last_name}`}</h4>
+          <MonthsTable months={student.months}/>
+        </div>
       ))  
       : <p>Aquí se mostrarán los estudiantes inscritos</p>
       }
