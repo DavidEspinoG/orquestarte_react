@@ -46,6 +46,7 @@ function Template(props){
             {props.myProfile && 
               <div className="navegacion">
                 <Link to="/miperfil/nuevo-alumno" className="navegacion__enlaces">Añadir alumno</Link>
+                <Link to="/miperfil" className="navegacion__enlaces">Mi perfil</Link>
                 {userId ?
                 <Link
                   to="/"

@@ -12,12 +12,14 @@ import { PayPalButtons } from "@paypal/react-paypal-js";
 import createOrder from "../helpers/createOrder";
 import onApprove from "../helpers/onApprove";
 import { Link } from "react-router-dom";
+import { newStudentSuccessFalse } from "../redux/studentsSlice";
 
 const MyProfile = () => {
   const userName = useSelector(state => state.user.name);
   const total = useSelector(state => state.cart.total);
   const cart = useSelector(state => state.cart.elements);
   const students = useSelector(state => state.students.currentUserStudents);
+  const newStudentSuccess = useSelector(state => state.students.newStudentSuccess);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -26,6 +28,9 @@ const MyProfile = () => {
     } else {
       dispatch(fetchStudentsFromCurrentUser());
       dispatch(getCartFromLocalStorage());
+    }
+    if(newStudentSuccess){
+      dispatch(newStudentSuccessFalse());
     }
   }, [userName])
   return(
