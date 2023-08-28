@@ -35,11 +35,13 @@ const SignUp = () => {
           }}
         >
           <label htmlFor="name">Nombre</label>
+          <span>*Nombre de padre, madre o tutor</span>
           <input required type="text" id="name" autoComplete="given-name"
             value={firstName}
             onChange={(e) => {setFirstName(e.target.value)}}
           />
           <label htmlFor="last-name">Apellidos</label>
+          <span>*Apellidos de padre, madre o tutor</span>
           <input required type="text" id="last-name" autoComplete="family-name"
             value={lastName}
             onChange={(e) => {setLastName(e.target.value)}}

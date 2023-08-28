@@ -8,7 +8,6 @@ import { emptyCart } from "../redux/cartSlice";
 
 function Template(props){
   const dispatch = useDispatch();
-  const carrito = useSelector(state => state.cart.elements);
   const userId = useSelector(state => state.user.id);
   return (
     <>
@@ -43,8 +42,7 @@ function Template(props){
             }
             {props.myProfile && 
               <div className="navegacion">
-                <Link to="/miperfil/nuevoalumno" className="navegacion__enlaces">Añadir alumno</Link>
-                <Link to="/miperfil/carrito" className="navegacion__enlaces">Carrito({`${carrito.length}`})</Link>
+                <Link to="/miperfil/nuevo-alumno" className="navegacion__enlaces">Añadir alumno</Link>
                 {userId ?
                 <Link
                   to="/"

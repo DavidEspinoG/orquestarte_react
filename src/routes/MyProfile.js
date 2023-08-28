@@ -11,11 +11,13 @@ import { emptyCart, getCartFromLocalStorage } from "../redux/cartSlice";
 import { PayPalButtons } from "@paypal/react-paypal-js";
 import createOrder from "../helpers/createOrder";
 import onApprove from "../helpers/onApprove";
+import { Link } from "react-router-dom";
 
 const MyProfile = () => {
   const userName = useSelector(state => state.user.name);
   const total = useSelector(state => state.cart.total);
   const cart = useSelector(state => state.cart.elements);
+  const students = useSelector(state => state.students.currentUserStudents);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -30,9 +32,18 @@ const MyProfile = () => {
   <>
     <Template myProfile={true}>
       <Title>Mi perfil</Title>
-      <h3 className="text-center">Bienvenido, {userName}</h3>
-      <StudentsFromUser/>
-      <h3 className="contenedor">{`Total: $${total}`}</h3>
+      <h3 className="text-center">Bienvenido(a), {userName}</h3>
+      {students.length > 0 ?
+        <>
+          <StudentsFromUser/>
+          <h3 className="contenedor">{`Total: $${total}`}</h3>
+        </>
+        :
+        <div className="contenedor">
+          <p className="display-6 text-center mt-5">Todavía no has registrado ningún estudiante, 
+            registra un nuevo alumno <Link to="/nuevo-alumno">aqui</Link> </p>
+        </div>
+      }
       {total > 0 && 
       <div className="contenedor">
         <PayPalButtons 
