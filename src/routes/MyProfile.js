@@ -8,6 +8,7 @@ import { fetchStudentsFromCurrentUser } from "../redux/studentsSlice";
 import { useDispatch } from "react-redux";
 import StudentsFromUser from "../components/StudentsFromUser";
 import { getCartFromLocalStorage } from "../redux/cartSlice";
+import { PayPalButtons } from "@paypal/react-paypal-js";
 
 const MyProfile = () => {
   const userName = useSelector(state => state.user.name);
@@ -29,6 +30,11 @@ const MyProfile = () => {
         <h3 className="text-center">Bienvenido, {userName}</h3>
         <StudentsFromUser/>
         <h3 className="contenedor">{`Total: $${total}`}</h3>
+        {total > 0 && 
+        <div className="contenedor">
+          <PayPalButtons />
+        </div>}
+        
     </Template>
   </>)
 }
