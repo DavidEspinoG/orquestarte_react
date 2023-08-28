@@ -10,11 +10,9 @@ import StudentsFromUser from "../components/StudentsFromUser";
 import { emptyCart, getCartFromLocalStorage } from "../redux/cartSlice";
 import { PayPalButtons } from "@paypal/react-paypal-js";
 import createOrder from "../helpers/createOrder";
+import onApprove from "../helpers/onApprove";
 
 const MyProfile = () => {
-  function refreshPage() {
-    window.location.reload(false);
-  }
   const userName = useSelector(state => state.user.name);
   const total = useSelector(state => state.cart.total);
   const cart = useSelector(state => state.cart.elements);
@@ -39,15 +37,12 @@ const MyProfile = () => {
       <div className="contenedor">
         <PayPalButtons 
           createOrder={() => createOrder(cart)}
-          onApprove={() => {
-            dispatch(emptyCart());
-            refreshPage();
+          onApprove={(data) => {
+            onApprove(data)
+            dispatch(emptyCart())
           }}
-          onCancel={() => refreshPage()}
         />
       </div>}
-      <button onClick={() => console.log(cart)}>Console log cart</button>
-        
     </Template>
   </>)
 }
