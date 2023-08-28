@@ -39,6 +39,9 @@ const MyProfile = () => {
           createOrder={() => createOrder(cart)}
           onApprove={(data) => {
             onApprove(data)
+            .then(() => {
+              dispatch(fetchStudentsFromCurrentUser());
+            })
             dispatch(emptyCart())
           }}
         />

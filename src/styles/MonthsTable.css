@@ -18,3 +18,15 @@
 .months-table tbody tr:nth-child(even){
   background-color: var(--amarillo);
 }
+
+.paid-month {
+  background-color: rgb(62, 167, 62);
+  color: white;
+  border-radius: 10px;
+}
+
+.unpaid-month {
+  background-color: var(--gris);
+  color: white;
+  border-radius: 10px;
+}

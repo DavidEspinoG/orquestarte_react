@@ -8,7 +8,7 @@ const MonthsTable = ({months}) => {
       <thead>
         <tr>
           <td>Mes</td>
-          <td>Precio</td>
+          <td>Status</td>
           <td>Acción</td>
         </tr>
       </thead>
@@ -19,9 +19,17 @@ const MonthsTable = ({months}) => {
               {month.name}
             </td>
             <td>
-              <p>{`$${month.price}`}</p>
+              {month.paid ? 
+              <div className="paid-month">Pagado</div>
+              :
+              <div className="unpaid-month">Pendiente</div>
+              }
             </td>
-            <td><AddToCart month={month}/></td>
+            <td>{month.paid ? 
+              '------':
+              <AddToCart month={month}/>
+              }
+            </td>
           </tr>
           ))}
       </tbody>
