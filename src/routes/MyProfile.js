@@ -7,12 +7,17 @@ import { useNavigate } from "react-router-dom";
 import { fetchStudentsFromCurrentUser } from "../redux/studentsSlice";
 import { useDispatch } from "react-redux";
 import StudentsFromUser from "../components/StudentsFromUser";
-import { getCartFromLocalStorage } from "../redux/cartSlice";
+import { emptyCart, getCartFromLocalStorage } from "../redux/cartSlice";
 import { PayPalButtons } from "@paypal/react-paypal-js";
+import createOrder from "../helpers/createOrder";
 
 const MyProfile = () => {
+  function refreshPage() {
+    window.location.reload(false);
+  }
   const userName = useSelector(state => state.user.name);
   const total = useSelector(state => state.cart.total);
+  const cart = useSelector(state => state.cart.elements);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -26,14 +31,22 @@ const MyProfile = () => {
   return(
   <>
     <Template myProfile={true}>
-        <Title>Mi perfil</Title>
-        <h3 className="text-center">Bienvenido, {userName}</h3>
-        <StudentsFromUser/>
-        <h3 className="contenedor">{`Total: $${total}`}</h3>
-        {total > 0 && 
-        <div className="contenedor">
-          <PayPalButtons />
-        </div>}
+      <Title>Mi perfil</Title>
+      <h3 className="text-center">Bienvenido, {userName}</h3>
+      <StudentsFromUser/>
+      <h3 className="contenedor">{`Total: $${total}`}</h3>
+      {total > 0 && 
+      <div className="contenedor">
+        <PayPalButtons 
+          createOrder={() => createOrder(cart)}
+          onApprove={() => {
+            dispatch(emptyCart());
+            refreshPage();
+          }}
+          onCancel={() => refreshPage()}
+        />
+      </div>}
+      <button onClick={() => console.log(cart)}>Console log cart</button>
         
     </Template>
   </>)

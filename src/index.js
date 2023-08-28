@@ -5,14 +5,15 @@ import App from './App';
 import store from './redux/store';
 import { Provider } from 'react-redux';
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
+import { PAY_PAL_CLIENT_ID } from './secrets';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode options={{
-    clientId:'AdOcpRAfXLtGx5v5e7SXngEU5PavxoOZtxvmfyduUS7JkYZZIkOVBqJUgG43U9FSibqoIR4UkVlKPEp8',
-    currency: 'MXN'
-  }}>
-    <PayPalScriptProvider>
+  <React.StrictMode>
+    <PayPalScriptProvider options={{
+      clientId: PAY_PAL_CLIENT_ID,
+      currency: 'MXN'
+     }}>
       <Provider store={store}>
         <App />
       </Provider>

@@ -11,7 +11,6 @@ const cartSlice = createSlice({
     getCartFromLocalStorage: (state) => {
       const localCart = JSON.parse(sessionStorage.getItem('cart'));
       if(localCart){
-        console.log(localCart)
         state.elements = localCart.elements;
         state.total = localCart.total;
         state.cartExist = localCart.cartExist;
@@ -36,6 +35,7 @@ const cartSlice = createSlice({
     }, 
     emptyCart: (state) => {
       state.elements = [];
+      state.total = 0;
       state.cartExist = false; 
       sessionStorage.removeItem('cart');
     },
