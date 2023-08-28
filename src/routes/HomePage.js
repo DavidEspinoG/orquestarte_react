@@ -3,11 +3,11 @@ import { Template } from "../components/Template";
 import { Testimonial } from "../components/Testimonial";
 
 function HomePage() {
-    return (
-        <Template home={true}>
-            <Testimonial/>
-        </Template>
-    )
+  return (
+    <Template home={true}>
+      <Testimonial/>
+    </Template>
+  ) 
 }
 
 export { HomePage }

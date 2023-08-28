@@ -13,6 +13,8 @@ import { useDispatch } from "react-redux";
 import { setUser } from "./redux/userSlice";
 import { useSelector } from "react-redux";
 import SignUp from "./routes/SignUp";
+import NewStudent from "./routes/NewStudent";
+import NotFound from "./routes/NotFound";
 
 function App() {
   const userId = useSelector((state) => state.user.id);
@@ -39,6 +41,8 @@ function App() {
         <Route path="/recital" element={<Recital/>}/>
         <Route path="/admin" element={<Admin/>}/>
         <Route path="/miperfil" element={<MyProfile/>}/>
+        <Route path="/miperfil/nuevo-alumno" element={<NewStudent />}/>
+        <Route path="*" element={<NotFound />}/>
       </Routes>
     </BrowserRouter>
   );

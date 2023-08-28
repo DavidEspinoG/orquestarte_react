@@ -41,7 +41,7 @@ const MyProfile = () => {
         :
         <div className="contenedor">
           <p className="display-6 text-center mt-5">Todavía no has registrado ningún estudiante, 
-            registra un nuevo alumno <Link to="/nuevo-alumno">aqui</Link> </p>
+            registra un nuevo alumno <Link to="/miperfil/nuevo-alumno">aqui</Link> </p>
         </div>
       }
       {total > 0 && 
