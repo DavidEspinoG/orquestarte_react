@@ -41,7 +41,9 @@ const MyProfile = () => {
       {students.length > 0 ?
         <>
           <StudentsFromUser/>
-          <h3 className="contenedor">{`Total: $${total}`}</h3>
+          <div >
+            
+          </div>
         </>
         :
         <div className="contenedor">
@@ -50,7 +52,8 @@ const MyProfile = () => {
         </div>
       }
       {total > 0 && 
-      <div className="contenedor">
+      <div className="stretch-container">
+        <h3>{`Total: $${total}`}</h3>
         <PayPalButtons 
           createOrder={() => createOrder(cart)}
           onApprove={(data) => {
