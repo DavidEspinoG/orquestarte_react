@@ -1,13 +1,13 @@
-import React from "react";
-import { Template } from "../components/Template";
-import { Testimonial } from "../components/Testimonial";
+import React from 'react';
+import { Template } from '../components/Template';
+import { Testimonial } from '../components/Testimonial';
 
 function HomePage() {
   return (
-    <Template home={true}>
-      <Testimonial/>
+    <Template home>
+      <Testimonial />
     </Template>
-  ) 
+  );
 }
 
-export { HomePage }
+export { HomePage };

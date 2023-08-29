@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 import '../styles/MonthsTable.css';
-import AddToCart from "./AddToCart";
+import AddToCart from './AddToCart';
 
-const MonthsTable = ({months}) => {
+function MonthsTable({ months }) {
   return (
     <table className="months-table">
       <thead>
@@ -13,28 +13,26 @@ const MonthsTable = ({months}) => {
         </tr>
       </thead>
       <tbody>
-          {months.map((month) => (
+        {months.map((month) => (
           <tr key={month.id}>
             <td>
               {month.name}
             </td>
             <td>
-              {month.paid ? 
-              <div className="paid-month">Pagado</div>
-              :
-              <div className="unpaid-month">Pendiente</div>
-              }
+              {month.paid
+                ? <div className="paid-month">Pagado</div>
+                : <div className="unpaid-month">Pendiente</div>}
             </td>
-            <td>{month.paid ? 
-              '------':
-              <AddToCart month={month}/>
-              }
+            <td>
+              {month.paid
+                ? '------'
+                : <AddToCart month={month} />}
             </td>
           </tr>
-          ))}
+        ))}
       </tbody>
     </table>
-  )
-};
+  );
+}
 
 export default MonthsTable;

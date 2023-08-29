@@ -1,7 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const cartSlice = createSlice({
-  name: 'cart', 
+  name: 'cart',
   initialState: {
     elements: [],
     cartExist: false,
@@ -10,7 +10,7 @@ const cartSlice = createSlice({
   reducers: {
     getCartFromLocalStorage: (state) => {
       const localCart = JSON.parse(sessionStorage.getItem('cart'));
-      if(localCart){
+      if (localCart) {
         state.elements = localCart.elements;
         state.total = localCart.total;
         state.cartExist = localCart.cartExist;
@@ -24,23 +24,25 @@ const cartSlice = createSlice({
     },
     removeElement: (state, action) => {
       const newArray = [...state.elements];
-      const index = newArray.findIndex(object => object.id === action.payload.id);
+      const index = newArray.findIndex((object) => object.id === action.payload.id);
       newArray.splice(index, 1);
       state.elements = newArray;
       state.total -= action.payload.price;
-      if(newArray.length === 0){
+      if (newArray.length === 0) {
         state.cartExist = false;
-      };
-      sessionStorage.setItem('cart', JSON.stringify(state))
-    }, 
+      }
+      sessionStorage.setItem('cart', JSON.stringify(state));
+    },
     emptyCart: (state) => {
       state.elements = [];
       state.total = 0;
-      state.cartExist = false; 
+      state.cartExist = false;
       sessionStorage.removeItem('cart');
     },
-  }
+  },
 });
 
-export const { addElement, getCartFromLocalStorage, removeElement, emptyCart } = cartSlice.actions;
+export const {
+  addElement, getCartFromLocalStorage, removeElement, emptyCart,
+} = cartSlice.actions;
 export default cartSlice;
