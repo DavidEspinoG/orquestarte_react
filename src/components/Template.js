@@ -25,7 +25,7 @@ function Template(props) {
                 {userId
                   ? <Link to="/miperfil" className="navegacion__enlaces">Mi perfil</Link>
                   : <Link to="/about" className="navegacion__enlaces">¿Quiénes somos?</Link>}
-                <Link to="/galeria" className="navegacion__enlaces">Galería</Link>
+                {/* <Link to="/galeria" className="navegacion__enlaces">Galería</Link> */}
                 <Link to="/recital" className="navegacion__enlaces">Recital</Link>
                 {userId
                   ? (

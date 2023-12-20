@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { AboutUs } from './routes/AboutUs';
 import { Contact } from './routes/Contact';
-import { Gallery } from './routes/Gallery';
 import { HomePage } from './routes/HomePage';
 import { Recital } from './routes/Recital';
 import Login from './routes/Login';
@@ -34,7 +33,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/inscripciones" element={<SignUp />} />
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/galeria" element={<Gallery />} />
+        {/* <Route path="/galeria" element={<Gallery />} /> */}
         <Route path="/contact" element={<Contact />} />
         <Route path="/recital" element={<Recital />} />
         <Route path="/admin" element={<Admin />} />
