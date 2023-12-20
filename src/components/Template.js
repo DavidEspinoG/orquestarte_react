@@ -26,7 +26,7 @@ function Template(props) {
                   ? <Link to="/miperfil" className="navegacion__enlaces">Mi perfil</Link>
                   : <Link to="/about" className="navegacion__enlaces">¿Quiénes somos?</Link>}
                 <Link to="/galeria" className="navegacion__enlaces">Galería</Link>
-                <Link to="/contact" className="navegacion__enlaces">Contacto</Link>
+                <Link to="/recital" className="navegacion__enlaces">Recital</Link>
                 {userId
                   ? (
                     <Link
@@ -41,7 +41,7 @@ function Template(props) {
                       Cerrar sesión
                     </Link>
                   )
-                  : <Link to="/login" className="navegacion__enlaces">Iniciar Sesión</Link>}
+                  : null}
               </div>
               )}
             {props.myProfile

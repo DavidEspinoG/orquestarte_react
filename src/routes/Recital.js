@@ -6,7 +6,7 @@ function Recital() {
   return (
     <Template home>
       <div className="contenedor centrar-texto">
-        <h1 className="titulo-recital">15 de julio de 2023</h1>
+        <h1 className="titulo-recital">20 de diciembre de 2023</h1>
         <div className="contenedor programa">
           {recitalData.map((alumno) => (
             <>
@@ -19,10 +19,6 @@ function Recital() {
                   </div>
                 ))}
               </div>
-              <p className="maestro">
-                Maestro(a):
-                {alumno.teacher}
-              </p>
               {alumno.accomp && (
               <p className="compositor">
                 Acompañada por:
